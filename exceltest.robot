@@ -4,7 +4,8 @@ Library           openpyxl
 Library           BuiltIn
 
 *** Variables ***
-${excel}   testData.xlsx
+${excel}      testData.xlsx
+
 
 *** Test Cases ***
 Test Load Data Excel
@@ -13,4 +14,8 @@ Test Load Data Excel
     ${cell}    Set Variable    ${ws.cell(1,1).value}
     ${body}    Fetch From Right    ${cell}    {}
     Log To Console  \n\n${body}\n
+    ${ws['G5']}    Evaluate     'ff'
+    log to console    \n${ws['G5']}\n
+
+
 

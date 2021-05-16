@@ -1,44 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20210516 11:14:00.150" schemaversion="2" generator="Robot 4.0.1 (Python 2.7.18 on win32)">
+<robot rpa="false" generated="20210516 12:39:53.727" schemaversion="2" generator="Robot 4.0.1 (Python 2.7.18 on win32)">
 <suite source="F:\testrobot\exceltest.robot" id="s1" name="Exceltest">
 <test id="s1-t1" name="Test Load Data Excel">
 <kw name="Load Workbook" library="openpyxl">
 <var>${wb}</var>
 <arg>F:\\testrobot/${excel}</arg>
 <doc>Open the given filename and return the workbook</doc>
-<msg timestamp="20210516 11:14:00.538" level="INFO">${wb} = &lt;openpyxl.workbook.workbook.Workbook object at 0x00000000042BA7C8&gt;</msg>
-<status status="PASS" endtime="20210516 11:14:00.538" starttime="20210516 11:14:00.533"/>
+<msg timestamp="20210516 12:39:54.113" level="INFO">${wb} = &lt;openpyxl.workbook.workbook.Workbook object at 0x0000000004CDF908&gt;</msg>
+<status status="PASS" endtime="20210516 12:39:54.113" starttime="20210516 12:39:54.107"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${ws}</var>
 <arg>${wb.get_active_sheet()}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210516 11:14:00.539" level="INFO">${ws} = &lt;Worksheet "Sheet1"&gt;</msg>
-<status status="PASS" endtime="20210516 11:14:00.539" starttime="20210516 11:14:00.539"/>
+<msg timestamp="20210516 12:39:54.114" level="INFO">${ws} = &lt;Worksheet "Sheet1"&gt;</msg>
+<status status="PASS" endtime="20210516 12:39:54.114" starttime="20210516 12:39:54.114"/>
 </kw>
 <kw name="Set Variable" library="BuiltIn">
 <var>${cell}</var>
 <arg>${ws.cell(1,1).value}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20210516 11:14:00.541" level="INFO">${cell} = d</msg>
-<status status="PASS" endtime="20210516 11:14:00.541" starttime="20210516 11:14:00.541"/>
+<msg timestamp="20210516 12:39:54.115" level="INFO">${cell} = d</msg>
+<status status="PASS" endtime="20210516 12:39:54.115" starttime="20210516 12:39:54.115"/>
 </kw>
 <kw name="Fetch From Right" library="String">
 <var>${body}</var>
 <arg>${cell}</arg>
 <arg>{}</arg>
 <doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
-<msg timestamp="20210516 11:14:00.542" level="INFO">${body} = d</msg>
-<status status="PASS" endtime="20210516 11:14:00.542" starttime="20210516 11:14:00.542"/>
+<msg timestamp="20210516 12:39:54.117" level="INFO">${body} = d</msg>
+<status status="PASS" endtime="20210516 12:39:54.117" starttime="20210516 12:39:54.117"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>\n\n${body}\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" endtime="20210516 11:14:00.544" starttime="20210516 11:14:00.543"/>
+<status status="PASS" endtime="20210516 12:39:54.117" starttime="20210516 12:39:54.117"/>
 </kw>
-<status status="PASS" endtime="20210516 11:14:00.544" starttime="20210516 11:14:00.533"/>
+<kw name="Evaluate" library="BuiltIn">
+<var>${ws['G5']}</var>
+<arg>'ff'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20210516 12:39:54.118" level="INFO">${ws['G5']} = ff</msg>
+<status status="PASS" endtime="20210516 12:39:54.118" starttime="20210516 12:39:54.118"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>\n${ws['G5']}\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" endtime="20210516 12:39:54.119" starttime="20210516 12:39:54.118"/>
+</kw>
+<status status="PASS" endtime="20210516 12:39:54.120" starttime="20210516 12:39:54.106"/>
 </test>
-<status status="PASS" endtime="20210516 11:14:00.545" starttime="20210516 11:14:00.152"/>
+<status status="PASS" endtime="20210516 12:39:54.121" starttime="20210516 12:39:53.730"/>
 </suite>
 <statistics>
 <total>
